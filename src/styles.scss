@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap";
+@import 'assets/scss/now-ui-dashboard/variables';
+@import 'assets/scss/now-ui-dashboard/mixins';
+
+// Plugins CSS
+// @import "assets/scss/now-ui-dashboard/plugins/plugin-animate-bootstrap-notify";
+// @import "assets/scss/now-ui-dashboard/plugins/plugin-perfect-scrollbar";
+
+// Core CSS
+@import "assets/scss/now-ui-dashboard/buttons";
+@import "assets/scss/now-ui-dashboard/inputs";
+@import "assets/scss/now-ui-dashboard/typography";
+@import "assets/scss/now-ui-dashboard/misc";
+@import "assets/scss/now-ui-dashboard/checkboxes-radio";
+
+// components
+@import "assets/scss/now-ui-dashboard/navbar";
+@import "assets/scss/now-ui-dashboard/page-header";
+@import "assets/scss/now-ui-dashboard/dropdown";
+@import "assets/scss/now-ui-dashboard/alerts";
+@import "assets/scss/now-ui-dashboard/images";
+@import "assets/scss/now-ui-dashboard/nucleo-outline";
+@import "assets/scss/now-ui-dashboard/tables";
+@import "assets/scss/now-ui-dashboard/sidebar-and-main-panel";
+@import "assets/scss/now-ui-dashboard/footers";
+@import "assets/scss/now-ui-dashboard/fixed-plugin";
+
+// cards
+@import "assets/scss/now-ui-dashboard/cards";
+@import "assets/scss/now-ui-dashboard/cards/card-plain";
+@import "assets/scss/now-ui-dashboard/cards/card-chart";
+@import "assets/scss/now-ui-dashboard/cards/card-user";
+@import "assets/scss/now-ui-dashboard/cards/card-map";
+
+@import "assets/scss/now-ui-dashboard/responsive";

@@ -9,7 +9,6 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
-import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [

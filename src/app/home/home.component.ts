@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
     if (this.authentificationService.currentUserValue) {
-      this.router.navigate(['/home']);
+      this.router.navigate(['']);
     }
 
   }

@@ -4,24 +4,29 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
-import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { NgbDropdownModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { TableComponent } from './table/table.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
     NavbarComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    TableComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    NgbDropdownModule
+    NgbDropdownModule,
+    NgbPaginationModule,
+    FontAwesomeModule
   ],
   exports: [
     NavbarComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    TableComponent
   ]
 })
 export class SharedModule { }

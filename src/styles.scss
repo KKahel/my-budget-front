@@ -33,3 +33,11 @@
 @import "assets/scss/now-ui-dashboard/cards/card-map";
 
 @import "assets/scss/now-ui-dashboard/responsive";
+
+
+
+.cursor {
+    &-pointer{
+        cursor: pointer;
+    }
+}

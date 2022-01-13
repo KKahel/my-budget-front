@@ -1,25 +1,22 @@
 <div class="main-content">
   <div class="card">
     <div class="card-header d-flex justify-content-between">
-      <h4 class="card-title">Simple Table</h4>
+      <h4 class="card-title">User Table</h4>
       <button type="button" class="btn btn-primary btn-round">Add User</button>
     </div>
     <div class="card-body">
       <div>
-        <table class="table">
-          <thead class="text-primary">
-            <th>FirstName</th>
-            <th>LastName</th>
-            <th>Email</th>
-          </thead>
-          <tbody>
-            <tr *ngFor="let user of users">
-                <td>{{ user.firstName }}</td>
-                <td>{{ user.lastName }}</td>
-                <td>{{ user.email }}</td>
-              </tr>
-          </tbody>
-        </table>
+        <app-table
+          *ngIf="users"
+          [Data]="users"
+          [Columns]="columnsOptions"
+          [ActionsColumn]="actionsColumn"
+          [Total]="count"
+          [Take]="take"
+          [Page]="1"
+          (OnPageChange)="pageChange($event)"
+        >
+        </app-table>
       </div>
     </div>
   </div>

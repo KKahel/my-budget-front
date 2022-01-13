@@ -21,8 +21,7 @@ export class UserService {
 
     const params = new HttpParams()
       .set('take', String(searchContext.take))
-      .set('skip', String(searchContext.skip))
-      .set('searchText', String(searchContext.searchText));
+      .set('skip', String(searchContext.skip));
 
     return this.http.get<SearchContextResult<User>>(`${environment.api}/user/search`, {params});
   }

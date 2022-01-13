@@ -1,0 +1,33 @@
+<table class="table">
+    <thead class="text-primary">
+        <tr>
+            <th *ngFor="let column of Columns">
+                {{ column.displayName ? column.displayName : column.name }}
+              </th>
+              <th *ngIf="ActionsColumn?.length">
+                  Actions
+              </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngIf="!Data">
+            <td colspan="3" class="text-center">Chargement en cours ...</td>
+          </tr>
+          <tr *ngIf="Data && !Data?.length">
+            <td colspan="3" class="text-center">Aucune donnée</td>
+          </tr>
+        <tr *ngFor="let result of Data">
+          <td *ngFor="let column of Columns" [innerHTML]="!column.render ? result[column.name] : column.render(result)">
+          </td>
+          <td class="actions" *ngIf="ActionsColumn?.length">
+            <ng-container *ngFor="let action of ActionsColumn">
+              <button *ngIf="action.type == columnButtonActionType.button" type="button" class="btn" [ngClass]="action.classes" (click)="clickActionType(result, action.actionType)">{{action.title}}</button>
+              <fa-icon *ngIf="action.type == columnButtonActionType.icon" class="cursor-pointer" [ngClass]="action.classes" [title]="action.title" [icon]="action.iconDefinition"  (click)="clickActionType(result, action.actionType)"></fa-icon>
+            </ng-container>
+          </td>
+        </tr>
+      </tbody>
+  </table>
+
+  <ngb-pagination (pageChange)="pageChange($event)" class="float-right" [maxSize]="5" [collectionSize]="Total" [pageSize]="Take" [(page)]="Page" aria-label="Default pagination"></ngb-pagination>

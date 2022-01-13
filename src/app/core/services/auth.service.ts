@@ -11,6 +11,8 @@ import { User } from 'src/app/entities/user';
 })
 export class AuthService {
 
+  private userKey = 'currentUser';
+
   private currentUserSubject: BehaviorSubject<User | null>;
   public currentUser: Observable<User | null>;
 
@@ -18,7 +20,7 @@ export class AuthService {
     private http: HttpClient,
     private storageService: StorageService
     ) {
-    this.currentUserSubject = new BehaviorSubject<User | null>(storageService.get('currentUser'));
+    this.currentUserSubject = new BehaviorSubject<User | null>(storageService.get(this.userKey));
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
@@ -31,16 +33,15 @@ export class AuthService {
     .pipe(map(user => {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         // localStorage.setItem('currentUser', JSON.stringify(user));
-        this.storageService.add('currentUser', user)
+        this.storageService.add(this.userKey, user)
         this.currentUserSubject.next(user);
         return user;
     }));
   }
 
   logout(): void {
-    // remove user from local storage to log user out
-    // localStorage.removeItem('currentUser');
-    this.storageService.remove('currentUser');
+    debugger;
+    this.storageService.remove(this.userKey);
     this.currentUserSubject.next(null);
   }
 

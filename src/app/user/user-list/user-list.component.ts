@@ -25,8 +25,8 @@ export class UserListComponent implements OnInit {
   public columnsOptions: ColumnOptions<User>[] = [
     { name: 'id', displayName: 'identifiant' },
     { name: 'firstName', displayName: 'firstName'},
-    { name: 'lastName', displayName: 'firstName'},
-    { name: 'email', displayName: 'firstName'},
+    { name: 'lastName', displayName: 'lastName'},
+    { name: 'email', displayName: 'email'},
   ];
 
   public actionsColumn: ColumnButtonAction<UserActionType>[] = [
